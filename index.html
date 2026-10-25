@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GlobeQuest Travel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #00695c;
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #ffeb3b;
+    }
+    .search-bar {
+      margin-top: 10px;
+    }
+    .search-bar input {
+      padding: 8px;
+      border-radius: 20px;
+      border: none;
+      width: 200px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    .hero h2, .hero p, .hero button {
+      z-index: 1;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+    }
+    .hero p {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+    .hero button {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: #ffeb3b;
+      color: #333;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .hero button:hover {
+      background: #fdd835;
+    }
+
+    /* Search Section */
+    .search-section {
+      background: #e0f2f1;
+      padding: 30px;
+      text-align: center;
+    }
+    .search-section input, .search-section select {
+      margin: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    /* Content Sections */
+    .content {
+      padding: 40px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card h4 {
+      margin: 15px;
+      font-size: 1.2rem;
+    }
+    .card p {
+      margin: 0 15px 15px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    .rating {
+      margin: 0 15px 15px;
+      color: #ff9800;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      background: #00695c;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .search-bar input {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>GlobeQuest</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Hotels</a></li>
+        <li><a href="#">Flights</a></li>
+        <li><a href="#">Restaurants</a></li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Search destinations...">
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Explore the World with GlobeQuest</h2>
+    <p>Your adventure starts here</p>
+    <button>Plan Your Trip</button>
+  </section>
+
+  <!-- Search Section -->
+  <section class="search-section">
+    <h3>Find Your Perfect Stay</h3>
+    <input type="text" placeholder="Enter city or destination">
+    <select>
+      <option>Price Range</option>
+      <option>$ - Budget</option>
+      <option>$$ - Mid-range</option>
+      <option>$$$ - Luxury</option>
+    </select>
+    <select>
+      <option>Rating</option>
+      <option>3+ Stars</option>
+      <option>4+ Stars</option>
+      <option>5 Stars</option>
+    </select>
+    <button>Search</button>
+  </section>
+
+  <!-- Featured Destinations -->
+  <section class="content">
+    <h3 class="section-title">Featured Destinations</h3>
+    <div class="cards">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="Paris">
+        <h4>Paris, France</h4>
+        <p>The city of lights, romance, and timeless beauty.</p>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="Tokyo">
+        <h4>Tokyo, Japan</h4>
+        <p>A vibrant mix of tradition and futuristic innovation.</p>
+        <div class="rating">⭐⭐⭐⭐</div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Maldives">
+        <h4>Maldives</h4>
+        <p>Crystal-clear waters and luxury island escapes.</p>
+        <div class="rating">⭐⭐⭐⭐⭐</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 GlobeQuest Travel. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

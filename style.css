@@ -1,0 +1,195 @@
+/* General Reset */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header */
+header {
+  background: #00695c;
+  color: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky; /* keeps header visible when scrolling */
+  top: 0;
+  z-index: 1000;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Navigation Menu */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+nav ul li a:hover {
+  color: #ffeb3b;
+}
+
+/* Search Bar in Header */
+.search-bar input {
+  padding: 8px;
+  border-radius: 20px;
+  border: none;
+  width: 200px;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
+.hero h2, .hero p, .hero button {
+  z-index: 1;
+}
+.hero h2 {
+  font-size: 2.5rem;
+}
+.hero p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+.hero button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #ffeb3b;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.hero button:hover {
+  background: #fdd835;
+}
+
+/* Search Section */
+.search-section {
+  background: #e0f2f1;
+  padding: 30px;
+  text-align: center;
+}
+.search-section input, .search-section select, .search-section button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.search-section button {
+  background: #00695c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.search-section button:hover {
+  background: #004d40;
+}
+
+/* Content Sections */
+.content {
+  padding: 40px;
+}
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #00695c;
+}
+
+/* Card Layout */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.card h4 {
+  margin: 15px;
+  font-size: 1.2rem;
+  color: #333;
+}
+.card p {
+  margin: 0 15px 15px;
+  font-size: 0.9rem;
+  color: #666;
+}
+.rating {
+  margin: 0 15px 15px;
+  color: #ff9800;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: #00695c;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .search-bar input {
+    width: 100%;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+ 
